@@ -9,30 +9,32 @@ h1 {
 }
 
 .table {
-  text-align: center;
+  text-align:center;
   background-color: white;
   display: grid;
   grid-template-columns: 0.2fr 1fr 1fr;
   grid-auto-flow: column;
 }
 
+@mixin column($col) {
+  grid-column-start: $col;
+}
+
 .rank {
-  grid-column-start: 1;
+  @include column(1)
 }
-
 .c1 {
-  grid-column-start: 2;
+  @include column(2)
 }
-
 .c2 {
-  grid-column-start: 3;
+  @include column(3)
 }
 
 .thead {
   border: 2px solid black;
 }
 
-.selfie, .delayed {
+.selfie {
   object-fit: cover;
   border-radius: 30%;
   animation-name: spin;
@@ -44,8 +46,10 @@ h1 {
 }
 
 .delayed {
+  @extend .selfie;
   animation-delay: 0.13s;
 }
+
 
 .center {
   display: flex;
@@ -61,11 +65,10 @@ h1 {
 
 @keyframes spin {
   from {
-    transform: rotate(-15deg);
+    transform:rotate(-15deg);
   }
+
   to {
-    transform: rotate(15deg);
+    transform:rotate(15deg);
   }
 }
-
-/*# sourceMappingURL=style.css.map */
