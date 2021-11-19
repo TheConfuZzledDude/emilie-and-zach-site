@@ -51,6 +51,13 @@ h1 {
   justify-content: space-evenly;
 }
 
+.gradback {
+  background-image: linear-gradient(#FFFFFF, #AAAAAA);
+  width: fit-content;
+  padding: 10px;
+  margin: 10px;
+}
+
 @keyframes spin {
   from {
     transform:rotate(-15deg);
